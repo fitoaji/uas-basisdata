@@ -2,46 +2,58 @@
 include 'koneksi.php';
 $data = mysqli_query($conn, "SELECT * FROM mata_kuliah");
 ?>
+
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
+    <meta charset="UTF-8">
     <title>Data Mata Kuliah</title>
     <link rel="stylesheet" href="matakuliah.css">
 </head>
 <body>
 
-<h2>Data Mata Kuliah</h2>
-<a href="tambah.php">+ Tambah Mata Kuliah</a>
+<div class="container">
 
-<table border="1" cellpadding="10">
-<tr>
-    <th>No</th>
-    <th>Kode</th>
-    <th>Nama</th>
-    <th>SKS</th>
-    <th>Semester</th>
-    <th>Jurusan</th>
-    <th>Dosen</th>
-    <th>Aksi</th>
-</tr>
+    <div class="header">
+        <h2>📘 Data Mata Kuliah</h2>
+        <a href="tambah_matakuliah.php" class="btn-add">+ Tambah Mata Kuliah</a>
+    </div>
 
-<?php $no=1; while($d=mysqli_fetch_assoc($data)) { ?>
-<tr>
-    <td><?= $no++ ?></td>
-    <td><?= $d['kode_mk'] ?></td>
-    <td><?= $d['nama_mk'] ?></td>
-    <td><?= $d['sks'] ?></td>
-    <td><?= $d['semester'] ?></td>
-    <td><?= $d['jurusan'] ?></td>
-    <td><?= $d['dosen_pengampu'] ?></td>
-    <td>
-        <a href="edit.php?kode_mk=<?= $d['kode_mk'] ?>">Edit</a> |
-        <a href="hapus.php?kode_mk=<?= $d['kode_mk'] ?>"
-           onclick="return confirm('Yakin hapus?')">Hapus</a>
-    </td>
-</tr>
-<?php } ?>
-</table>
+    <table>
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Kode</th>
+                <th>Nama</th>
+                <th>SKS</th>
+                <th>Semester</th>
+                <th>Jurusan</th>
+                <th>Dosen</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody>
+        <?php $no=1; while($d=mysqli_fetch_assoc($data)) { ?>
+            <tr>
+                <td><?= $no++ ?></td>
+                <td><?= $d['kode_mk'] ?></td>
+                <td><?= $d['nama_mk'] ?></td>
+                <td><?= $d['sks'] ?></td>
+                <td><?= $d['semester'] ?></td>
+                <td><?= $d['jurusan'] ?></td>
+                <td><?= $d['dosen_pengampu'] ?></td>
+                <td class="aksi">
+                    <a href="edit_matakuliah.php?kode_mk=<?= $d['kode_mk'] ?>" class="btn-edit">Edit</a>
+                    <a href="hapus_matakuliah.php?kode_mk=<?= $d['kode_mk'] ?>" 
+                       class="btn-delete"
+                       onclick="return confirm('Yakin hapus data?')">Hapus</a>
+                </td>
+            </tr>
+        <?php } ?>
+        </tbody>
+    </table>
+
+</div>
 
 </body>
 </html>

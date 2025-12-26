@@ -7,17 +7,18 @@
 
 body {
     background: #f4f6f9;
+    padding: 30px;
 }
 
+/* Container */
 .container {
-    width: 95%;
-    margin: 30px auto;
-    background: white;
+    background: #ffffff;
     padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
 }
 
+/* Header */
 .header {
     display: flex;
     justify-content: space-between;
@@ -29,65 +30,75 @@ body {
     color: #333;
 }
 
+/* Button Tambah */
 .btn-add {
-    background: #28a745;
+    background: #007bff;
     color: white;
-    border: none;
-    padding: 10px 18px;
-    border-radius: 5px;
-    cursor: pointer;
+    padding: 10px 16px;
+    border-radius: 6px;
+    text-decoration: none;
     font-size: 14px;
+    transition: 0.3s;
 }
 
 .btn-add:hover {
-    opacity: 0.9;
+    background: #0056b3;
 }
 
-.table-container {
-    overflow-x: auto;
-}
-
+/* Table */
 table {
     width: 100%;
     border-collapse: collapse;
 }
 
-table th {
+table thead {
     background: #343a40;
     color: white;
-    padding: 12px;
-    text-align: left;
 }
 
-table td {
+table th, table td {
     padding: 12px;
-    border-bottom: 1px solid #ddd;
+    text-align: center;
+    font-size: 14px;
+}
+
+table tr:nth-child(even) {
+    background: #f8f9fa;
 }
 
 table tr:hover {
-    background: #f1f1f1;
+    background: #e9ecef;
 }
 
-/* Tombol Aksi */
+/* Button Aksi */
+.aksi {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
 .btn-edit {
-    background: #17a2b8;
-    color: white;
-    border: none;
-    padding: 6px 10px;
-    border-radius: 4px;
-    cursor: pointer;
+    background: #ffc107;
+    color: #000;
+    padding: 6px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 13px;
 }
 
 .btn-delete {
     background: #dc3545;
     color: white;
-    border: none;
-    padding: 6px 10px;
-    border-radius: 4px;
-    cursor: pointer;
+    padding: 6px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 13px;
 }
 
-.btn-edit:hover,
+.btn-edit:hover {
+    background: #e0a800;
+}
+
 .btn-delete:hover {
-    opacity: 0.85;
+    background: #c82333;
 }
