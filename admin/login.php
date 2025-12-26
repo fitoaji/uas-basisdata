@@ -3,7 +3,7 @@ session_start();
 include 'koneksi.php';
 
 if (isset($_SESSION['status']) && $_SESSION['status'] == "login") {
-    header("location:index.php");
+    header("location:dashboard.php");
 }
 
 $pesan = "";
@@ -19,7 +19,7 @@ if (isset($_POST['login'])) {
         $_SESSION['nama'] = $data['nama_lengkap'];
         $_SESSION['role'] = $role;
         $_SESSION['status'] = "login";
-        header("location:index.php");
+        header("location:dashboard.php");
     } else {
         $pesan = "Login Gagal! Cek Username/Password/Role.";
     }
