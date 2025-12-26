@@ -54,5 +54,9 @@ if (isset($_POST['login'])) {
         </form>
         <p style="font-size:10px; margin-top:10px; color:#888;">Demo: admin / 123</p>
     </div>
+        <p style="font-size:10px; margin-top:10px; color:#888;">Demo: dosen / 123</p>
+    </div>
+        <p style="font-size:10px; margin-top:10px; color:#888;">Demo: mahasiswa / 123</p>
+    </div>
 </body>
 </html>
