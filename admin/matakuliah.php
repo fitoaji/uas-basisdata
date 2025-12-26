@@ -28,7 +28,6 @@ $data = mysqli_query($conn, "SELECT * FROM mata_kuliah");
                 <th>SKS</th>
                 <th>Semester</th>
                 <th>Jurusan</th>
-                <th>Dosen</th>
                 <th>Aksi</th>
             </tr>
         </thead>
@@ -41,7 +40,6 @@ $data = mysqli_query($conn, "SELECT * FROM mata_kuliah");
                 <td><?= $d['sks'] ?></td>
                 <td><?= $d['semester'] ?></td>
                 <td><?= $d['jurusan'] ?></td>
-                <td><?= $d['dosen_pengampu'] ?></td>
                 <td class="aksi">
                     <a href="edit.php?kode_mk=<?= $d['kode_mk'] ?>" class="btn-edit">Edit</a>
                     <a href="hapus.php?kode_mk=<?= $d['kode_mk'] ?>" 

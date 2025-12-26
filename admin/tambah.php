@@ -7,8 +7,6 @@ Nama MK: <input type="text" name="nama_mk" required><br>
 SKS: <input type="number" name="sks" required><br>
 Semester: <input type="number" name="semester" required><br>
 Jurusan: <input type="text" name="jurusan" required><br>
-Dosen: <input type="text" name="dosen_pengampu" required><br>
-
 <button type="submit" name="simpan">Simpan</button>
 </form>
 
@@ -19,8 +17,7 @@ if (isset($_POST['simpan'])) {
         '$_POST[nama_mk]',
         '$_POST[sks]',
         '$_POST[semester]',
-        '$_POST[jurusan]',
-        '$_POST[dosen_pengampu]'
+        '$_POST[jurusan]'
     )");
     echo "<script>alert('Data berhasil ditambah');location='matakuliah.php';</script>";
 }
