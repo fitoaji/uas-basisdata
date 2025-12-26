@@ -3,7 +3,7 @@ include 'koneksi.php';
 
 if (isset($_POST['kode_mk'])) {
 
-    $kode   = $_POST['kode_mk']; // PK (TIDAK DIUBAH)
+    $kode   = $_POST['kode_mk'];
     $nama   = $_POST['nama_mk'];
     $sks    = $_POST['sks'];
     $smt    = $_POST['semester'];
