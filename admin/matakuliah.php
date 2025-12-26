@@ -1,80 +1,47 @@
+<?php
+include 'koneksi.php';
+$data = mysqli_query($conn, "SELECT * FROM mata_kuliah");
+?>
 <!DOCTYPE html>
-<html lang="id">
+<html>
 <head>
-    <meta charset="UTF-8">
     <title>Data Mata Kuliah</title>
     <link rel="stylesheet" href="matakuliah.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-<div class="container">
-    <div class="header">
-        <h2><i class="fas fa-book-open"></i> Data Mata Kuliah</h2>
-        <button class="btn-add">
-            <i class="fas fa-plus"></i> Tambah Mata Kuliah
-        </button>
-    </div>
+<h2>Data Mata Kuliah</h2>
+<a href="tambah_matakuliah.php">+ Tambah Mata Kuliah</a>
 
-    <div class="table-container">
-        <table>
-            <thead>
-                <tr>
-                    <th>No</th>
-                    <th>Kode MK</th>
-                    <th>Nama Mata Kuliah</th>
-                    <th>SKS</th>
-                    <th>Semester</th>
-                    <th>Jurusan</th>
-                    <th>Dosen Pengampu</th>
-                    <th>Aksi</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Data Dummy -->
-                <tr>
-                    <td>1</td>
-                    <td>IF101</td>
-                    <td>Algoritma dan Pemrograman</td>
-                    <td>3</td>
-                    <td>1</td>
-                    <td>Informatika</td>
-                    <td>Dr. Ahmad Fauzi</td>
-                    <td>
-                        <button class="btn-edit">Edit</button>
-                        <button class="btn-delete">Hapus</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>IF202</td>
-                    <td>Basis Data</td>
-                    <td>3</td>
-                    <td>3</td>
-                    <td>Informatika</td>
-                    <td>Rina Marlina</td>
-                    <td>
-                        <button class="btn-edit">Edit</button>
-                        <button class="btn-delete">Hapus</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>IF303</td>
-                    <td>Pemrograman Web</td>
-                    <td>3</td>
-                    <td>5</td>
-                    <td>Informatika</td>
-                    <td>Budi Santoso</td>
-                    <td>
-                        <button class="btn-edit">Edit</button>
-                        <button class="btn-delete">Hapus</button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</div>
+<table border="1" cellpadding="10">
+<tr>
+    <th>No</th>
+    <th>Kode</th>
+    <th>Nama</th>
+    <th>SKS</th>
+    <th>Semester</th>
+    <th>Jurusan</th>
+    <th>Dosen</th>
+    <th>Aksi</th>
+</tr>
+
+<?php $no=1; while($d=mysqli_fetch_assoc($data)) { ?>
+<tr>
+    <td><?= $no++ ?></td>
+    <td><?= $d['kode_mk'] ?></td>
+    <td><?= $d['nama_mk'] ?></td>
+    <td><?= $d['sks'] ?></td>
+    <td><?= $d['semester'] ?></td>
+    <td><?= $d['jurusan'] ?></td>
+    <td><?= $d['dosen_pengampu'] ?></td>
+    <td>
+        <a href="edit_matakuliah.php?kode_mk=<?= $d['kode_mk'] ?>">Edit</a> |
+        <a href="hapus_matakuliah.php?kode_mk=<?= $d['kode_mk'] ?>"
+           onclick="return confirm('Yakin hapus?')">Hapus</a>
+    </td>
+</tr>
+<?php } ?>
+</table>
 
 </body>
 </html>
