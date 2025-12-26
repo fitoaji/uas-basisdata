@@ -1,11 +1,23 @@
 <?php
 include 'koneksi.php';
 
-mysqli_query($conn, "UPDATE mata_kuliah SET
-    nama_mk='$_POST[nama_mk]',
-    sks='$_POST[sks]',
-    semester='$_POST[semester]',
-    jurusan='$_POST[jurusan]'
-WHERE kode_mk='$_POST[kode_mk]'");
+if (isset($_POST['kode_mk'])) {
 
-header("location:matakuliah.php");
+    $kode   = $_POST['kode_mk']; // PK (TIDAK DIUBAH)
+    $nama   = $_POST['nama_mk'];
+    $sks    = $_POST['sks'];
+    $smt    = $_POST['semester'];
+    $jur    = $_POST['jurusan'];
+
+    mysqli_query($conn, "UPDATE mata_kuliah SET
+        nama_mk='$nama',
+        sks='$sks',
+        semester='$smt',
+        jurusan='$jur'
+        WHERE kode_mk='$kode'
+    ");
+
+    header("Location: matakuliah.php");
+    exit;
+}
+?>
