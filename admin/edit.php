@@ -15,7 +15,5 @@ Nama MK: <input type="text" name="nama_mk" value="<?= $data['nama_mk'] ?>"><br>
 SKS: <input type="number" name="sks" value="<?= $data['sks'] ?>"><br>
 Semester: <input type="number" name="semester" value="<?= $data['semester'] ?>"><br>
 Jurusan: <input type="text" name="jurusan" value="<?= $data['jurusan'] ?>"><br>
-Dosen: <input type="text" name="dosen_pengampu" value="<?= $data['dosen_pengampu'] ?>"><br>
-
 <button type="submit">Update</button>
 </form>
