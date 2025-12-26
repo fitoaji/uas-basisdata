@@ -1,0 +1,10 @@
+{
+    "kurikulum": 10,
+    "semester": 8,
+    "jurusan": 4,
+    "matakuliah": 35,
+    "dosen": 30,
+    "mahasiswa": 500,
+    "ruangan": 20,
+    "absensi": 40
+}
