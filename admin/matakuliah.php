@@ -16,7 +16,7 @@ $data = mysqli_query($conn, "SELECT * FROM mata_kuliah");
 
     <div class="header">
         <h2>📘 Data Mata Kuliah</h2>
-        <a href="tambah_matakuliah.php" class="btn-add">+ Tambah Mata Kuliah</a>
+        <a href="tambah.php" class="btn-add">+ Tambah Mata Kuliah</a>
     </div>
 
     <table>
@@ -43,8 +43,8 @@ $data = mysqli_query($conn, "SELECT * FROM mata_kuliah");
                 <td><?= $d['jurusan'] ?></td>
                 <td><?= $d['dosen_pengampu'] ?></td>
                 <td class="aksi">
-                    <a href="edit_matakuliah.php?kode_mk=<?= $d['kode_mk'] ?>" class="btn-edit">Edit</a>
-                    <a href="hapus_matakuliah.php?kode_mk=<?= $d['kode_mk'] ?>" 
+                    <a href="edit.php?kode_mk=<?= $d['kode_mk'] ?>" class="btn-edit">Edit</a>
+                    <a href="hapus.php?kode_mk=<?= $d['kode_mk'] ?>" 
                        class="btn-delete"
                        onclick="return confirm('Yakin hapus data?')">Hapus</a>
                 </td>
