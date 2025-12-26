@@ -11,6 +11,7 @@ $data = mysqli_fetch_assoc(
 <form method="POST" action="update_matakuliah.php">
 <input type="hidden" name="kode_mk" value="<?= $data['kode_mk'] ?>">
 
+Kode MK: <input type="number" name="kode_mk" value="<?= $data['kode_mk'] ?>"><br>
 Nama MK: <input type="text" name="nama_mk" value="<?= $data['nama_mk'] ?>"><br>
 SKS: <input type="number" name="sks" value="<?= $data['sks'] ?>"><br>
 Semester: <input type="number" name="semester" value="<?= $data['semester'] ?>"><br>
