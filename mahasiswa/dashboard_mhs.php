@@ -1,15 +1,11 @@
 <?php
-// =====================
-// KONEKSI DATABASE
-// =====================
+
 $conn = mysqli_connect("localhost", "root", "", "siakad");
 if (!$conn) {
     die("Koneksi database gagal: " . mysqli_connect_error());
 }
 
-// =====================
-// FUNCTION SAFE COUNT
-// =====================
+
 function getCount($conn, $table, $field = '*') {
     $check = mysqli_query($conn, "SHOW TABLES LIKE '$table'");
     if (mysqli_num_rows($check) == 0) return 0;

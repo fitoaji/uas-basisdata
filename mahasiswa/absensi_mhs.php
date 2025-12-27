@@ -2,14 +2,8 @@
 session_start();
 include '../koneksi.php';
 
-/* contoh isi session saat login mahasiswa
-$_SESSION['nim'] = '230001';
-$_SESSION['nama'] = 'Andi Saputra';
-$_SESSION['jurusan'] = 'Teknik Informatika';
-*/
-
-if ($_SESSION['role'] != 'mahasiswa') {
-    header("location:../login.php");
+if (!isset($_SESSION['role']) || $_SESSION['role'] != 'mahasiswa') {
+    header("Location: /uas-basisdata/login.php");
     exit;
 }
 
@@ -21,7 +15,7 @@ $tanggal = date('Y-m-d');
 <head>
     <meta charset="UTF-8">
     <title>Absensi Mahasiswa</title>
-    <link rel="stylesheet" href="../absensi.css">
+    <link rel="stylesheet" href="./absensi.css">
 </head>
 <body>
 
