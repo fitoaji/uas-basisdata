@@ -1,27 +1,38 @@
 <?php
 session_start();
-include 'koneksi.php';
-
-if (isset($_SESSION['status']) && $_SESSION['status'] == "login") {
-    header("location:dashboard.php");
-}
+include "../config/koneksi.php";
 
 $pesan = "";
+
 if (isset($_POST['login'])) {
     $username = $_POST['username'];
-    $password = md5($_POST['password']);
-    $role = $_POST['role'];
+    $password = $_POST['password'];
+    $role     = $_POST['role'];
 
-    $query = mysqli_query($conn, "SELECT * FROM users WHERE username='$username' AND password='$password' AND role='$role'");
+    $query = mysqli_query($conn, "
+        SELECT * FROM users 
+        WHERE username='$username' 
+        AND password='$password' 
+        AND role='$role'
+    ");
+
     if (mysqli_num_rows($query) > 0) {
         $data = mysqli_fetch_assoc($query);
-        $_SESSION['username'] = $username;
-        $_SESSION['nama'] = $data['nama_lengkap'];
-        $_SESSION['role'] = $role;
-        $_SESSION['status'] = "login";
-        header("location:dashboard.php");
+
+        $_SESSION['id_user'] = $data['id'];
+        $_SESSION['nama']    = $data['nama'];
+        $_SESSION['role']    = $data['role'];
+
+        if ($data['role'] == 'admin') {
+            header("Location: ../admin/dashboard.php");
+        } elseif ($data['role'] == 'dosen') {
+            header("Location: ../dosen/dashboard.php");
+        } elseif ($data['role'] == 'mahasiswa') {
+            header("Location: ../mahasiswa/dashboard.php");
+        }
+        exit;
     } else {
-        $pesan = "Login Gagal! Cek Username/Password/Role.";
+        $pesan = "Username / Password / Role salah";
     }
 }
 ?>
@@ -53,10 +64,8 @@ if (isset($_POST['login'])) {
             <button type="submit" name="login">MASUK</button>
         </form>
         <p style="font-size:10px; margin-top:10px; color:#888;">Demo: admin / 123</p>
-    </div>
-        <p style="font-size:10px; margin-top:10px; color:#888;">Demo: dosen / 123</p>
-    </div>
-        <p style="font-size:10px; margin-top:10px; color:#888;">Demo: mahasiswa / 123</p>
+          <p style="font-size:10px; margin-top:10px; color:#888;">Demo: dosen / 123</p>
+                  <p style="font-size:10px; margin-top:10px; color:#888;">Demo: mahasiswa / 123</p>
     </div>
 </body>
 </html>

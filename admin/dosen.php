@@ -6,18 +6,18 @@ $keyword = $_GET['keyword'] ?? '';
 
 $sql = "SELECT * FROM dosen";
 if ($keyword != '') {
-    $sql .= " WHERE nim LIKE '%$keyword%' 
+    $sql .= " WHERE nidn LIKE '%$keyword%' 
               OR nama LIKE '%$keyword%'";
 }
-
-$sql .= " ORDER BY angkatan DESC, nama ASC";
+$sql .= " ORDER BY nama ASC";
 $query = mysqli_query($conn, $sql);
+
 ?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Data Mahasiswa</title>
+    <title>Data Dosen</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -30,36 +30,30 @@ $query = mysqli_query($conn, $sql);
         <input type="text" name="keyword" placeholder="Cari NIM / Nama..."
                value="<?= htmlspecialchars($keyword) ?>" class="search-input">
         <button type="submit" class="btn btn-add">Cari</button>
-        <a href="mahasiswa.php" class="btn btn-export">Reset</a>
+        <a href="dosen.php" class="btn btn-export">Reset</a>
     </form>
 
     <div class="table-container">
         <table>
             <thead>
                 <tr>
-                    <th>NIDN</th>
-                    <th>Nama</th>
-                    <th>Email</th>
-                    <th>Jurusan</th>
-                    <th>Angkatan</th>
-                    <th>Status</th>
+                    <th>No</th>
+<th>NIDN</th>
+<th>Nama</th>
+<th>Email</th>
+<th>ID Matkul</th>
+
                 </tr>
             </thead>
             <tbody>
                 <?php if (mysqli_num_rows($query) > 0): ?>
                     <?php $no=1; while ($row = mysqli_fetch_assoc($query)): ?>
                     <tr>
-                        <td><?= $no++ ?></td>
-                        <td><?= $row['nim'] ?></td>
-                        <td><?= $row['nama'] ?></td>
-                        <td><?= $row['email'] ?></td>
-                        <td><?= $row['jurusan'] ?></td>
-                        <td><?= $row['angkatan'] ?></td>
-                        <td>
-                            <span class="status <?= strtolower($row['status']) ?>">
-                                <?= strtoupper($row['status']) ?>
-                            </span>
-                        </td>
+                          <td><?= $no++ ?></td>
+    <td><?= $row['nidn'] ?></td>
+    <td><?= $row['nama'] ?></td>
+    <td><?= $row['email'] ?></td>
+    <td><?= $row['id_matkul'] ?></td>
                     </tr>
                     <?php endwhile; ?>
                 <?php else: ?>
