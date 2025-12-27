@@ -55,7 +55,7 @@ $absensi    = getCount($conn, "absensi");
         <a href="mahasiswa.php"><i class="fas fa-user-graduate"></i> Mahasiswa</a>
         <a href="matakuliah.php"><i class="fas fa-book-open"></i> Matakuliah</a>
         <a href="ruangan.php"><i class="fas fa-door-open"></i> Ruangan</a>
-        <a href="absensi.php"><i class="fas fa-clipboard-check"></i> Absensi</a>
+        <a href="absensi_mhs.php"><i class="fas fa-clipboard-check"></i> Absensi</a>
         <a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
     </div>
 </div>
