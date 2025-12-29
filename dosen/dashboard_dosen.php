@@ -60,10 +60,10 @@ $kelulusan = mysqli_fetch_assoc(
         <small>Sistem Akademik</small>
     </div>
     <div class="menu">
-        <a href="dashboard.php" class="active">
+        <a href="dashboard_dosen.php" class="active">
             <i class="fas fa-home"></i> Dashboard
         </a>
-        <a href="jadwal.php">
+        <a href="jadwal_dosen.php">
             <i class="fas fa-calendar"></i> Jadwal Mengajar
         </a>
         <a href="absensi.php">
