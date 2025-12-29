@@ -20,7 +20,7 @@ $password = md5($_POST['password']);
         $data = mysqli_fetch_assoc($query);
 
         $_SESSION['id_user'] = $data['id'];
-        $_SESSION['nama']    = $data['nama'];
+        $_SESSION['username']    = $data['username'];
         $_SESSION['role']    = $data['role'];
 
         if ($data['role'] == 'admin') {

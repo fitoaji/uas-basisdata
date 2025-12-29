@@ -1,10 +1,10 @@
 <?php
 session_start();
 
-// Hapus semua data session
+// hapus semua session
 session_unset();
 session_destroy();
 
-// Kembali ke halaman login
+// balik ke login (karena login satu folder)
 header("Location: login.php");
 exit;

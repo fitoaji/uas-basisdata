@@ -15,8 +15,8 @@ function loadDosen() {
                     <td>${d.nama}</td>
                     <td>${d.email}</td>
                     <td>
-                        <button onclick="edit(${d.id_dosen}, '${d.nidn}', '${d.nama}', '${d.email}')">✏️ Edit</button>
-                        <button onclick="hapus(${d.id_dosen})">🗑 Hapus</button>
+                        <button onclick="edit(${d.id_dosen}, '${d.nidn}', '${d.nama}', '${d.email}')">Edit</button>
+                        <button onclick="hapus(${d.id_dosen})"> Hapus</button>
                     </td>
                 </tr>
                 `;
