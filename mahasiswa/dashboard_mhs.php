@@ -83,10 +83,10 @@ $keuangan = getCountWhere($conn,
     <div class="menu">
         <a href="#" class="active"><i class="fas fa-home"></i> Dashboard</a>
         <a href="krs.php"><i class="fas fa-book"></i> KRS</a>
-        <a href="nilai.php"><i class="fas fa-chart-line"></i> Nilai</a>
-        <a href="absensi.php"><i class="fas fa-clipboard-check"></i> Absensi</a>
+        <a href="nilai_mhs.php"><i class="fas fa-chart-line"></i> Nilai</a>
+        <a href="absensi_mhs.php"><i class="fas fa-clipboard-check"></i> Absensi</a>
         <a href="keuangan.php"><i class="fas fa-money-bill"></i>Keuangan</a>
-        <a href="../logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        <a href="../auth/logout.php">Logout</a>
     </div>
 </div>
 
@@ -104,37 +104,39 @@ $keuangan = getCountWhere($conn,
 
     <div class="cards-grid">
 
-        <div class="card c-blue">
-            <div class="card-info">
-                <h3><?= $krs ?></h3>
-                <p>KRS</p>
-            </div>
-            <div class="card-icon"><i class="fas fa-book"></i></div>
+    <a href="krs.php" class="card c-blue">
+        <div class="card-info">
+            <h3><?= $krs ?></h3>
+            <p>KRS</p>
         </div>
+        <div class="card-icon"><i class="fas fa-book"></i></div>
+    </a>
 
-        <div class="card c-green">
-            <div class="card-info">
-                <h3><?= $nilai ?></h3>
-                <p>Nilai</p>
-            </div>
-            <div class="card-icon"><i class="fas fa-chart-line"></i></div>
+    <a href="nilai_mhs.php" class="card c-green">
+        <div class="card-info">
+            <h3><?= $nilai ?></h3>
+            <p>Nilai</p>
         </div>
+        <div class="card-icon"><i class="fas fa-chart-line"></i></div>
+    </a>
 
-        <div class="card c-red">
-            <div class="card-info">
-                <h3><?= $absensi ?></h3>
-                <p>Absensi</p>
-            </div>
-            <div class="card-icon"><i class="fas fa-clipboard-check"></i></div>
+    <a href="absensi_mhs.php" class="card c-red">
+        <div class="card-info">
+            <h3><?= $absensi ?></h3>
+            <p>Absensi</p>
         </div>
+        <div class="card-icon"><i class="fas fa-clipboard-check"></i></div>
+    </a>
 
-        <div class="card c-yellow">
-            <div class="card-info">
-                <h3><?= $keuangan ?></h3>
-                <p>Keuangan</p>
-            </div>
-            <div class="card-icon"><i class="fas fa-money-bill-wave"></i></div>
+    <a href="keuangan.php" class="card c-yellow">
+        <div class="card-info">
+            <h3><?= $keuangan ?></h3>
+            <p>Keuangan</p>
         </div>
+        <div class="card-icon"><i class="fas fa-money-bill-wave"></i></div>
+    </a>
+
+</div>
 
     </div>
 
