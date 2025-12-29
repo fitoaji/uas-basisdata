@@ -1,4 +1,4 @@
-<?php include 'koneksi.php'; ?>
+<?php include '../config/koneksi.php'; ?>
 <h2>Tambah Mata Kuliah</h2>
 
 <form method="POST">

@@ -6,7 +6,7 @@ $pesan = "";
 
 if (isset($_POST['login'])) {
     $username = $_POST['username'];
-    $password = $_POST['password'];
+$password = md5($_POST['password']);
     $role     = $_POST['role'];
 
     $query = mysqli_query($conn, "
@@ -26,9 +26,9 @@ if (isset($_POST['login'])) {
         if ($data['role'] == 'admin') {
             header("Location: ../admin/dashboard.php");
         } elseif ($data['role'] == 'dosen') {
-            header("Location: ../dosen/dashboard.php");
+            header("Location: ../dosen/dashboard_dosen.php");
         } elseif ($data['role'] == 'mahasiswa') {
-            header("Location: ../mahasiswa/dashboard.php");
+            header("Location: ../mahasiswa/dashboard_mhs.php");
         }
         exit;
     } else {

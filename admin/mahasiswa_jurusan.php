@@ -1,5 +1,5 @@
 <?php
-include "koneksi.php";
+include "../config/koneksi.php";
 
 $jurusan = $_GET['jurusan'] ?? '';
 
