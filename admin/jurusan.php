@@ -1,44 +1,61 @@
-<?php
-$fakultas = [
-    "Fakultas Teknik" => [
-        "Teknik Informatika",
-        "Sistem Informasi",
-        "Teknik Sipil",
-        "Arsitektur"
-    ],
-    "Fakultas Hukum" => [
-        "Ilmu Hukum"
-    ],
-    "Fakultas Ilmu Sosial dan Politik" => [
-        "Ilmu Komunikasi",
-        "Ilmu Politik"
-    ]
-];
-?>
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Data Fakultas & Jurusan</title>
-    <link rel="stylesheet" href="jurusan_style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin Kampus</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-<div class="container">
-    <h1>Data Fakultas & Jurusan</h1>
-
-    <?php foreach ($fakultas as $namaFakultas => $jurusan): ?>
-        <div class="card">
-            <h2><?= $namaFakultas; ?></h2>
-            <ul>
-                <?php foreach ($jurusan as $j): ?>
-                    <li><?= $j; ?></li>
-                <?php endforeach; ?>
-            </ul>
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h3>UNPRI ADMIN</h3>
         </div>
-    <?php endforeach; ?>
-</div>
+        <div class="menu">
+            <a href="dashboard.php"><i class="fas fa-home"></i> Dashboard</a>
+            <a href="kurikulum.php"><i class="fas fa-book"></i> Kurikulum</a>
+            <a href="semester.php"><i class="fas fa-calendar-alt"></i> Semester</a>
+            <a href="jurusan.php" class="active"><i class="fas fa-university"></i> Jurusan</a>
+            <a href="dosen.php"><i class="fas fa-chalkboard-teacher"></i> Dosen</a>
+            <a href="mahasiswa.php"><i class="fas fa-user-graduate"></i> Mahasiswa</a>
+            <a href="matakuliah.php"><i class="fas fa-book-open"></i> Matakuliah</a>
+            <a href="ruangan.php"><i class="fas fa-door-open"></i> Ruangan</a>
+            <a href="absensi.php"><i class="fas fa-clipboard-check"></i> Absensi</a>
+            <a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+    </div>
+          
+<?php
+$jurusan = [
+    "Teknik Informatika",
+    "Sistem Informasi",
+    "Teknik Sipil",
+    "Arsitektur"
+];
+?>
 
+<div class="container">
+    <h1>Data Jurusan</h1>
+
+    <div class="card-fakultas">
+        <h2>Fakultas Teknik</h2>
+        <ul>
+            <?php foreach ($jurusan as $j): ?>
+                <li class="jurusan-item">
+                    <a href ="mahasiswa_jurusan.php?jurusan=<?= urlencode($j) ?>"
+                       style="text-decoration: none; color: black;">
+                        <?= $j ?>
+                    </a>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+</div>
+</div>
+</div>
+    <script src="script_jurusan.js"></script>
 </body>
 </html>

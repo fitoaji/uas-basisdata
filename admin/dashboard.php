@@ -48,7 +48,7 @@ $absensi    = getCount($conn, "absensi");
         <h3>UNPRI ADMIN</h3>
     </div>
     <div class="menu">
-        <a href="dashboard.php" class="active"><i class="fas fa-home"></i> Dashboard</a>
+        <a href="dashboard.php"><i class="fas fa-home"></i> Dashboard</a>
         <a href="kurikulum.php"><i class="fas fa-book"></i> Kurikulum</a>
         <a href="Jurusan.php"><i class="fas fa-university"></i> Jurusan</a>
         <a href="dosen.php"><i class="fas fa-chalkboard-teacher"></i> Dosen</a>
