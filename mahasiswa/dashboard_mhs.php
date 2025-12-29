@@ -55,8 +55,8 @@ $absensi = getCountWhere($conn,
     "SELECT COUNT(*) AS total FROM absensi WHERE nim='$nim'"
 );
 
-// PEMBAYARAN
-$pembayaran = getCountWhere($conn,
+// KEUANGAN
+$keuangan = getCountWhere($conn,
     "SELECT COUNT(*) AS total FROM keuangan WHERE nim='$nim'"
 );
 ?>
@@ -85,7 +85,7 @@ $pembayaran = getCountWhere($conn,
         <a href="krs.php"><i class="fas fa-book"></i> KRS</a>
         <a href="nilai.php"><i class="fas fa-chart-line"></i> Nilai</a>
         <a href="absensi.php"><i class="fas fa-clipboard-check"></i> Absensi</a>
-        <a href="pembayaran.php"><i class="fas fa-money-bill"></i> Pembayaran</a>
+        <a href="keuangan.php"><i class="fas fa-money-bill"></i>Keuangan</a>
         <a href="../logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
     </div>
 </div>
@@ -130,8 +130,8 @@ $pembayaran = getCountWhere($conn,
 
         <div class="card c-yellow">
             <div class="card-info">
-                <h3><?= $pembayaran ?></h3>
-                <p>Pembayaran</p>
+                <h3><?= $keuangan ?></h3>
+                <p>Keuangan</p>
             </div>
             <div class="card-icon"><i class="fas fa-money-bill-wave"></i></div>
         </div>
