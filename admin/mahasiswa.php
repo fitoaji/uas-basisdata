@@ -129,7 +129,7 @@ function loadMahasiswa() {
                     </td>
                     <td>
                         <button class="btn btn-export" onclick="edit(${m.id_mahasiswa}, '${m.nim}', '${m.nama}', '${m.email}', '${m.jurusan}', '${m.angkatan}', '${m.status}')">Edit</button>
-                        <button class="btn btn-add" style="background:#dc3545" onclick="hapus(${m.id_mahasiswa})">Hapus</button>
+                        <button class="btn btn-export" onclick="hapus(${m.id_mahasiswa})">Hapus</button>
                     </td>
                 </tr>`;
             });
